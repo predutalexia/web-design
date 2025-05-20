@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/chatbot.css'%}">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div id="sideMenu" class="side-overlay">
+        <a href="javascript:void(0)" class="closebtn" id="closeSide" onclick="closeSideMenu()">&times;</a>
+        <div class="side-content">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'form' %}">Contact</a></li>
+            <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            <li><a href="{% url 'chatbot' %}">Chatbot</a></li>
+        </div>
+    </div>
+
+    <!-- Menu Button -->
+    <span class="openbtn" id="openSide" onclick="openSideMenu()">&#9776;</span>
+
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header">
+            Welcome to Chatbot
+        </div>
+        <div id="messages-container">
+            <!-- Messages will appear here -->
+        </div>
+        <form id="chat-form">
+            <input type="text" id="user-input" placeholder="Answer here...">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <footer>
+        <p align="center">&copy; 2025 Predut Alexia - Blog</p>
+    </footer>
+
+    <script src="{% static 'js/chatbot.js' %}"></script>
+    <script src="{% static 'js/menu.js' %}"></script>
+
+
+</body>
+</html>

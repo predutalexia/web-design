@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css'%}">
+</head>
+
+<body>
+    <!-- Side Menu -->
+    <div id="sideMenu" class="side-overlay">
+        <a href="javascript:void(0)" class="closebtn" id="closeSide">&times;</a>
+        <div class="side-content">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'form' %}">Contact</a></li>
+            <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            <li><a href="{% url 'chatbot' %}">Chatbot</a></li>
+        </div>
+    </div>
+
+    <!-- Menu Open Button -->
+    <span class="openbtn" id="openSide">&#9776;</span>
+
+    <!-- Main Content Box - White box surrounding everything -->
+    <div class="content-box">
+
+        <!-- Header Section -->
+        <div class="header-box">
+            <h1 align="center">Welcome to Predut Alexia's Blog</h1>
+        </div>
+
+        <!-- About Section -->
+        <div class="about-box">
+            <p align="center">
+                <img src="{% static 'images/name.jpg' %}" style="width: 80%; max-width: 900px; height: auto;" alt="Me">
+            </p>
+            <h1>About Me</h1>
+            <p>My name is Predut Alexia, I am 20 years old and my birthday is on 22nd of January.</p>
+            <p>I'm currently studying Computer Science at the West University of Timisoara.</p>
+            <p>My favourite hobbies that I practice are climbing, hiking, and cooking.</p>
+            <p>
+                My name is Predut Alexia, and I am a first-year student at the West University of Timișoara, where I am studying Computer Science. I am originally from Caransebeș, and I have a strong passion for technology, always eager to explore the latest 
+                innovations and advancements in the field.
+            </p>
+        </div>
+
+        <!-- CV Section -->
+        <div class="cv-box">
+            <h2>Curriculum Vitae - CV</h2>
+            <table style="width:100%; border:1px solid black; border-collapse: collapse;">
+                <tr>
+                    <th style="border:1px solid black;padding:8px;">Education</th>
+                    <th style="border:1px solid black;padding:8px;">Languages</th>
+                    <th style="border:1px solid black;padding:8px;">Skills</th>
+                </tr>
+                <tr>
+                    <td style="border:1px solid black;padding:8px;">
+                        Highschool: Liceul Teoretic "Grigore Moisil"<br>
+                        College: University of Western Timișoara FMI (UVT)
+                    </td>
+                    <td style="border:1px solid black;padding:8px;">
+                        English (Advanced)<br>
+                        German (Intermediate)<br>
+                        Spanish (Beginner)
+                    </td>
+                    <td style="border:1px solid black;padding:8px;">
+                        Problem-solving<br>
+                        Time management<br>
+                        Teamwork<br>
+                        Leadership
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div> <!-- End of main content-box -->
+
+    <footer>
+        <p align="center">&copy; 2025 Predut Alexia - Blog</p>
+    </footer>
+
+    <script src="{% static 'js/menu.js' %}"></script>
+
+
+</body>
+</html>

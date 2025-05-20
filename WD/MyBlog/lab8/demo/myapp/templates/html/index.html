@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Blog</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}" />
+    <link rel="stylesheet" href="{% static 'index_BackToTop.css' %}" />
+    <link rel="stylesheet" href="{% static 'index_SearchPosts.css' %}" />
+</head>
+
+<body>
+    <!-- Side overlay menu -->
+    <div id="sideMenu" class="side-overlay">
+        <a href="javascript:void(0)" class="closebtn" id="closeSide">&times;</a>
+        <div class="side-content">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'form' %}">Contact</a></li>
+            <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            <li><a href="{% url 'chatbot' %}">Chatbot</a></li>
+        </div>
+    </div>
+
+    <!-- Menu open button -->
+    <span class="openbtn" id="openSide">&#9776;</span>
+
+    <h1 class="main-heading">Welcome to Predut Alexia's Blog</h1>
+
+    <main>
+        <!-- Search Bar -->
+        <div id="searchContainer">
+            <input type="text" id="searchInput" placeholder="Search..." />
+            <button id="searchButton" onclick="searchPosts()">Search</button>
+        </div>
+
+        <!-- Back to Top -->
+        <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">Back to Top</button>
+
+        <div class="container">
+            <!-- Static Blog Posts -->
+            {% comment %} Blog Post 1 {% endcomment %}
+            <div class="blog-post">
+                <div class="blog-header">
+                    <span class="blog-author">Predut Alexia</span>
+                    <span>• Feb 26, 2025</span>
+                </div>
+                <a href="{% url 'post_detail' 1 %}">
+                    <img src="{% static 'images/post1.jpg' %}" alt="West University of Timisoara" class="blog-image" />
+                </a>
+                <div class="blog-content">
+                    <p><b><a href="{% url 'post_detail' 1 %}">The University I Study At</a></b></p>
+                    <p>Studying at the West University of Timișoara has been a journey filled with learning and
+                        growth... From navigating new academic challenges to meeting inspiring professors and peers,
+                        every semester has shaped my mindset and skills. Beyond textbooks and exams, it's a place where
+                        I've discovered my passions, pushed my limits, and built memories that will last a lifetime.</p>
+                </div>
+            </div>
+
+            {% comment %} Blog Post 2 {% endcomment %}
+            <div class="blog-post">
+                <div class="blog-header">
+                    <span class="blog-author">Predut Alexia</span>
+                    <span>• Feb 27, 2025</span>
+                </div>
+                <a href="{% url 'post_detail' 2 %}">
+                    <img src="{% static 'images/post2.jpg' %}" alt="Coding on a laptop" class="blog-image" />
+                </a>
+                <div class="blog-content">
+                    <p><b><a href="{% url 'post_detail' 2 %}">Why I Chose Computer Science</a></b></p>
+                    <p>From a young age, I was fascinated by technology. The ability to create something meaningful from
+                        code amazed me... What started as curiosity quickly turned into a passion as I realized how
+                        coding could solve real-world problems and bring ideas to life. Whether it was building simple
+                        websites or experimenting with Python scripts, I found joy in the process of creating,
+                        debugging, and improving. This passion is what led me to pursue computer science, where each
+                        challenge feels like an exciting puzzle waiting to be solved. </p>
+                </div>
+            </div>
+
+            {% comment %} Blog Post 3 {% endcomment %}
+            <div class="blog-post">
+                <div class="blog-header">
+                    <span class="blog-author">Predut Alexia</span>
+                    <span>• Feb 28, 2025</span>
+                </div>
+                <a href="{% url 'post_detail' 3 %}">
+                    <img src="{% static 'images/post3.jpg' %}" alt="Rock climber on a cliff" class="blog-image" />
+                </a>
+                <div class="blog-content">
+                    <p><b><a href="{% url 'post_detail' 3 %}">My Passion for Climbing</a></b></p>
+                    <p>Climbing has always been a way for me to challenge myself physically and mentally... Every route
+                        demands focus, strategy, and trust — not just in the gear, but in myself. Reaching the top isn’t
+                        just about strength; it’s about perseverance, problem-solving, and staying calm under pressure.
+                        It’s in those quiet moments on the wall, with nothing but the next hold in sight, that I feel
+                        the most present and alive.</p>
+                </div>
+            </div>
+
+            {% comment %} Blog Post 4 {% endcomment %}
+            <div class="blog-post">
+                <div class="blog-header">
+                    <span class="blog-author">Predut Alexia</span>
+                    <span>• Mar 1, 2025</span>
+                </div>
+                <a href="{% url 'post_detail' 4 %}">
+                    <img src="{% static 'images/post4.jpg' %}" alt="Delicious homemade dish" class="blog-image" />
+                </a>
+                <div class="blog-content">
+                    <p><b><a href="{% url 'post_detail' 4 %}">Cooking: A Creative Outlet</a></b></p>
+                    <p>Cooking is not just a necessity for me; it is an art form and a way to express creativity...
+                        Whether I’m experimenting with new ingredients or recreating traditional family recipes, cooking
+                        allows me to slow down and enjoy the process. Each dish tells a story — of culture, comfort, and
+                        care. It's my favorite way to unwind after a long day, and sharing what I make with friends or
+                        family brings a special kind of joy. Over time, I’ve learned that cooking isn’t just about
+                        following steps — it’s about intuition, improvisation, and putting a little bit of yourself into
+                        every bite.</p>
+                </div>
+            </div>
+
+            {% comment %} Blog Post 5 {% endcomment %}
+            <div class="blog-post">
+                <div class="blog-header">
+                    <span class="blog-author">Predut Alexia</span>
+                    <span>• Mar 5, 2025</span>
+                </div>
+                <a href="{% url 'post_detail' 5 %}">
+                    <img src="{% static 'images/post5.jpg' %}" alt="Hiking adventure" class="blog-image" />
+                </a>
+                <div class="blog-content">
+                    <p><b><a href="{% url 'post_detail' 5 %}">Hiking: A Journey into Nature and Adventure</a></b></p>
+                    <p>Hiking is more than just a way to stay active—it is a journey into nature that nourishes the
+                        soul... Every trail offers something new: breathtaking views, unexpected challenges, and a quiet
+                        kind of clarity that’s hard to find in day-to-day life. I love the feeling of my feet crunching
+                        over dirt and stone, the sound of birds in the distance, and the satisfaction of reaching a
+                        summit after a tough climb. Hiking reconnects me to the world around me and reminds me how much
+                        beauty exists off the beaten path. It’s in those peaceful, elevated moments that I feel most
+                        grounded.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews -->
+        <section class="review-section-wrapper">
+            <div class="review-section">
+                <h2>Reviews</h2>
+                <div class="review-container">
+                    {% for review in reviews %}
+                    <div class="review-card">
+                        <p><strong>{{ review.email }}</strong> ({{ review.date }})</p>
+                        <p><em>Rating: {{ review.rating }}</em></p>
+                        <p>{{ review.comment }}</p>
+                    </div>
+                    {% empty %}
+                    <p>No reviews yet.</p>
+                    {% endfor %}
+                </div>
+                <a href="{% url 'submit_review' %}" class="review-link">Leave a Review</a>
+            </div>
+        </section>                
+    </main>
+
+    <footer>
+        <p align="center">&copy; 2025 Predut Alexia - Blog</p>
+    </footer>
+
+    <script src="{% static 'js/menu.js' %}"></script>
+    <script src="{% static 'js/index_BackToTop.js' %}"></script>
+    <script src="{% static 'js/index_SearchPosts.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<div>
+        <ul style="list-style-type: circle;">
+            <link rel="stylesheet" type="text/css" href="{% static 'css/index.css'%}">
+            <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css'%}">            
+        </ul>
+ </div>
+
+<body> 
+
+<!-- Side Menu -->
+<div id="sideMenu" class="side-overlay">
+    <a href="javascript:void(0)" class="closebtn" id="closeSide">&times;</a>
+    <div class="side-content">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+        <li><a href="{% url 'form' %}">Contact</a></li>
+        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+        <li><a href="{% url 'chatbot' %}">Chatbot</a></li>
+    </div>
+</div>
+
+<!-- Menu Open Button -->
+<span class="openbtn" id="openSide">&#9776;</span>
+
+
+
+        <div class="container">
+            <form class="form" action="/submit" method="post" onsubmit="return validateForm()">
+                <h1 class="main-heading">Formular</h1>
+                    <p>
+                        <label>Salutation
+                            <select name="salutation">
+                            <option>--None--</option>
+                            <option>Mr.</option>
+                            <option>Ms.</option>
+                            <option>Mrs.</option>
+                            <option>Dr.</option>
+                            <option>Prof.</option>
+                            </select>
+                        </label>
+                     </p>
+            <p> <label>First name: <input name="firstName" /></label></p>
+            <p><label>Last name: <input name="lastName" /></label></p>
+            <p>Gender:
+                <label><input type="radio" name="gender" value="male" />Male</label>
+                <label><input type="radio" name="gender" value="female" />Female</label>
+            </p>
+            <p><label>Email:<input type="email" name="email" /></label></p>
+            <p><label>Date of Birth:<input type="date" name="birthDate"></label></p>
+            <p><label>Address: <textarea name="address" cols="30" rows="3"> </textarea>
+            </label></p>
+            <p>Interests:
+                <br>
+                <label><input type="checkbox" name="interests" value="Sports"> Sports</label><br>
+                <label><input type="checkbox" name="interests" value="Music"> Music</label><br>
+                <label><input type="checkbox" name="interests" value="Movies"> Movies</label>
+            </p>
+            <p>
+                <label>Profile Picture: <input type="file" name="profilePicture"></label>
+            </p>
+
+            <p>
+                <label>Upload CV (PDF only): <input type="file" name="cvUpload" accept=".pdf"></label>
+            </p>
+
+            <p>Communication Preferences:
+                <br>
+                <label><input type="checkbox" name="communication" value="Email"> Email</label><br>
+                <label><input type="checkbox" name="communication" value="SMS"> SMS</label>
+            </p>
+
+            <p><button type="submit">Submit</button></p>
+            </form>
+        </div>
+
+    <footer> 
+        <br>
+        <p align = "center">&copy; 2025 Predut Alexia - Blog</p>
+
+        <script src="{% static 'js/form.js' %}"></script>
+        <script src="{% static 'js/menu.js' %}"></script>
+
+
+</body>
+</html>

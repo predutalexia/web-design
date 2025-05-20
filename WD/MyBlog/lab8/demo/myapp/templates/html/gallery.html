@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/gallery.css'%}">
+</head>
+
+<body>
+    <!-- Side Menu -->
+    <div id="sideMenu" class="side-overlay">
+        <a href="javascript:void(0)" class="closebtn" id="closeSide">&times;</a>
+        <div class="side-content">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'form' %}">Contact</a></li>
+            <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            <li><a href="{% url 'chatbot' %}">Chatbot</a></li>
+        </div>
+    </div>
+
+     <!-- Menu Button -->
+     <span class="openbtn" id="openSide">&#9776;</span>
+
+    <h1 class="gallery-title">
+        <div class="wave-container">
+            <h1 class="wave-text">
+                <span>G</span><span>A</span><span>L</span><span>L</span><span>E</span><span>R</span><span>Y</span>
+            </h1>
+        </div>
+    </h1>
+  
+    <div class="slider">
+        <div class="slides">
+            <img src="{% static 'images/flower1.jpg' %}" alt="...">
+            <img src="{% static 'images/flower2.jpg' %}" alt="...">
+            <img src="{% static 'images/flower3.jpg' %}" alt="...">
+            <img src="{% static 'images/flower4.jpg' %}" alt="...">
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+    <script src="../js/gallery.js"></script>
+
+    <br>
+    <footer>
+        <p align="center">&copy; 2025 Predut Alexia - Blog</p>
+    </footer>
+
+    <script src="{% static 'js/menu.js' %}"></script>
+    <script src="{% static 'js/gallery.js' %}"></script>
+
+    
+</body>
+</html>
